@@ -15,12 +15,12 @@ gameToPic Game{gamePlayer=pp, gameAi=ai, gameScore=gs, gameBall=gb, gameState=_}
     = pictures [
     -- bg
         color bgColor $ rectangleSolid 640 480
+    -- ball
+        , uncurry translate (ballPos gb) $ color ballColor $ circleSolid 30
     -- ai paddle
-        , translate (fst ai - 250) ((snd ai)) $ color playerColor $ rectangleSolid 30 100
+        , translate (fst ai - 250) (snd ai) $ color playerColor $ rectangleSolid 30 100
     -- player paddle
         , translate (fst pp + 250) (snd pp + 190) $ color playerColor $ rectangleSolid 30 100
-    -- ball
-        , translate (fst gb) (snd gb) $ color ballColor $ circleSolid 30 
     -- score
         , translate (-300) 190 $ scale 0.25 0.25 $ color white $ text $ show gs
     ]
