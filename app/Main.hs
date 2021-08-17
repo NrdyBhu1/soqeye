@@ -7,4 +7,4 @@ import Logic
 
 main :: IO ()
 main = do
-    play window background 30 initialGame gameToPic handleEvents (const id)
+    play window background 30 initialGame gameToPic handleEvents updateGame

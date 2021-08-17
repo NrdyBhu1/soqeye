@@ -6,11 +6,11 @@ data GameState = GamePlaying | GameEnd
     deriving (Eq, Show)
 
 data Game = Game {
-    gameplayer :: (Float, Float)
-    , gameai :: (Float, Float)
-    , gameball :: (Float, Float)
-    , gamescore :: Int
-    , gamestate :: GameState
+    gamePlayer :: (Float, Float)
+    , gameAi :: (Float, Float)
+    , gameBall :: (Float, Float)
+    , gameScore :: Int
+    , gameState :: GameState
     } deriving (Eq, Show) 
 
 screenWidth :: Int
@@ -19,10 +19,16 @@ screenWidth = 640
 screenHeight :: Int
 screenHeight = 480
 
+screenWidthF :: Float
+screenWidthF = 640
+
+screenHeightF :: Float
+screenHeightF = 480
+
 initialGame = Game {
-        gameplayer = (0, 0)
-        , gameai = (0, 100)
-        , gameball = (0, 0)
-        , gamescore = 69
-        , gamestate = GamePlaying
+        gamePlayer = (0, 0)
+        , gameAi = (0, 100)
+        , gameBall = (0, 0)
+        , gameScore = 69
+        , gameState = GamePlaying
     }
